@@ -1,0 +1,21 @@
+
+version: 2
+
+models:
+  - name: TB_CARRO
+    description: "UMA TABELA PARA OS PAGAMENTOS DO CARRO"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: tb_NOTEBOOK
+    description: "UMA TABELA PARA OS PAGAMENTOS DO NOTEBOOK"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
