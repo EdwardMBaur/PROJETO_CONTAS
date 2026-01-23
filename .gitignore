@@ -1,0 +1,10 @@
+# Ignorar o ambiente virtual (a pasta das bibliotecas)
+.venv/
+venv/
+
+# Ignorar o arquivo de senhas (SEGURANÇA MÁXIMA)
+.env
+
+# Ignorar arquivos compilados/temporários do Python
+__pycache__/
+*.py[cod]

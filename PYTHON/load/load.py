@@ -1,20 +1,14 @@
 import pandas as pd
 import psycopg2 as pg
 from psycopg2.extras import execute_values
+from configs.settings import get_db_config
 
 class Load:
     
-    DB_CONFIG = {
-        "database": "neondb",
-        "user": "neondb_owner",
-        "password": "npg_f1kXTJiL2EaU",
-        "host": "ep-square-art-ackp60x1-pooler.sa-east-1.aws.neon.tech",
-        "port": "5432"
-    }
-
     @staticmethod
     def _get_connection():
-        return pg.connect(**Load.DB_CONFIG)
+        config = get_db_config()
+        return pg.connect(**config)
 
     @staticmethod
     def _prepare_dataframe(dataframe: pd.DataFrame, columns_order: list):
@@ -22,7 +16,6 @@ class Load:
         Método auxiliar para garantir a ordem das colunas e tratar NULLs.
         """
         df_sorted = dataframe[columns_order]
-
         return df_sorted.where(pd.notnull(df_sorted), None)
 
     @staticmethod

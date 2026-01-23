@@ -3,8 +3,13 @@ import psycopg2 as pg
 import pandas as pd
 from datetime import date
 import time
+from configs.settings import get_db_config
 
 st.set_page_config(layout="wide", page_title="Sistema de Dívidas")
+
+def init_connection():
+    config = get_db_config()
+    return pg.connect(**config)
 
 def check_password():
     """Retorna True se o login for bem sucedido"""
@@ -35,14 +40,8 @@ def main_app():
     if st.sidebar.button("Sair / Logout"):
         st.session_state["password_correct"] = False
         st.rerun()
-    
-    conn = pg.connect(
-        database="neondb",
-        user="neondb_owner",
-        password="npg_f1kXTJiL2EaU",
-        host="ep-square-art-ackp60x1-pooler.sa-east-1.aws.neon.tech",
-        port="5432"
-    )
+
+    conn = init_connection()
 
     tb_carro_sql = 'SELECT * FROM PUBLIC."TB_CARRO"'
     tb_notebook_sql = 'SELECT * FROM PUBLIC."TB_NOTEBOOK"'
