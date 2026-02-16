@@ -8,3 +8,5 @@ venv/
 # Ignorar arquivos compilados/temporários do Python
 __pycache__/
 *.py[cod]
+
+configs/*.json
