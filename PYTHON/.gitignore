@@ -1,0 +1,14 @@
+# Ignorar o ambiente virtual (a pasta das bibliotecas)
+.venv/
+venv/
+
+# Ignorar o arquivo de senhas (SEGURANÇA MÁXIMA)
+.env
+
+# Ignorar arquivos compilados/temporários do Python
+__pycache__/
+*.py[cod]
+
+configs/golden-pillar-483902-d4-4862974bc3e8.json
+
+configs/*.json
