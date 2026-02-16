@@ -9,6 +9,6 @@ venv/
 __pycache__/
 *.py[cod]
 
-PYTHON/configs/*.json
+PYTHON/configs/golden-pillar-483902-d4-4862974bc3e8.json
 
-PYTHON/paths.py
+PYTHON/configs/paths.py
